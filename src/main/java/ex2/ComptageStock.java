@@ -6,39 +6,62 @@ import java.util.Date;
 
 public class ComptageStock {
 
+	/** nb : int */
 	private int nb;
+	/** resultat : int */
 	private int resultat;
+	/** dateDebutComptage : Date */
 	private Date dateDebutComptage;
-	private String dateFinComptage;
+	/** dateFinComptage : String */
+	private Date dateFinComptage;
+	/** type : String */
 	private String type;
-	
+
+	/**
+	 * @param nb : int
+	 */
+	public ComptageStock(int nb) {
+		super();
+		this.nb = nb;
+	}
+
+	/** Ajoute un élément
+	 * @param montant
+	 */
 	public void ajouterElement(int montant){
 		nb++;
 		resultat +=montant;
 	}
-	
-	public void afficheStatutComptage(){
-		
-		if (type!=null && type.equals("SOM")){
-			System.out.println("Ce comptage est de type SOMME");
-			System.out.println("Nombre d'élements "+nb);
-			
-			System.out.println("Résultat "+resultat);
+
+	/** Affiche le statut du comptage avec date début et fin
+	 *  @param typeComptage SOMME ou MOYENNE 
+	 */
+	public void afficheStatutComptage(TypeComptage typeComptage){
+
+		if(nb==0){
+			throw new RuntimeException("Le comptage n'a aucun élément !");
 		}
-		else if (type!=null && type.equals("MOY")){
-			System.out.println("Ce compte est de type MOYENNE");
-			System.out.println("Nombre d'élements "+nb);
-			
-			System.out.println("Résultat "+resultat/nb);
-		}
-		
+
+		afficheResultat(typeComptage);
+		dateDebutComptage();		
+		dateFinComptage();
+	}
+
+	/**
+	 * Cette méthode vérifie la date de début de comptage
+	 */
+	private void dateDebutComptage() {
 		if (dateDebutComptage!=null){
-			SimpleDateFormat f = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-			System.out.println(f.format(dateDebutComptage));
+			System.out.println(DateUtils.format(dateDebutComptage));
 		}
-		
+	}
+
+	/**
+	 * Cette méthode vérifie la date de fin de comptage
+	 */
+	private void dateFinComptage() {
 		if (dateFinComptage!=null){
-			System.out.println("Le comptage est clos depuis le "+dateFinComptage);
+			System.out.println("Le comptage est clos depuis le "+DateUtils.format(dateFinComptage));
 			if (nb==0){
 				System.out.println("Le comptage est clos mais n'a pas d'éléments. Le comptage est en anomalie.");
 			}
@@ -50,16 +73,22 @@ public class ComptageStock {
 			System.out.println("Le compte est actif.");
 		}
 	}
-	
-	public Date getDateFinComptage(){
-		SimpleDateFormat ff = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-		if (dateFinComptage!=null){
-			try {
-				return ff.parse(dateFinComptage);
-			} catch (ParseException e) {
-				return null;
-			}
+
+	/** Cette méthode permet d'envoyer le résultat en fonction du type
+	 * @param typeComptage
+	 */
+	private void afficheResultat(TypeComptage typeComptage){
+		if (typeComptage!=null && typeComptage.equals(TypeComptage.SOMME)){
+			System.out.println("Ce comptage est de type SOMME");
+			System.out.println("Nombre d'élements "+nb);
+
+			System.out.println("Résultat "+resultat);
 		}
-		return null;
+		else if (typeComptage!=null && typeComptage.equals(TypeComptage.MOYENNE)){
+			System.out.println("Ce compte est de type MOYENNE");
+			System.out.println("Nombre d'élements "+nb);
+
+			System.out.println("Résultat "+resultat/nb);
+		}
 	}
 }

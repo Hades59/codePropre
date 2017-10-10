@@ -7,12 +7,13 @@ public class ZooApplication {
 		
 		zoo.addAnimal("Gazelle", "MAMMIFERE", "HERBIVORE");
 		zoo.addAnimal("Zèbre", "MAMIFERE", "HERBIVORE");
-		zoo.addAnimal("Lion", "MAMMIFERE", "HERBIVORE");
+		zoo.addAnimal("Lion", "MAMMIFERE", "CARNIVORE");
 		zoo.addAnimal("Panthère", "MAMMIFERE", "CARNIVORE");
-		zoo.addAnimal("Requin blanc", "POISSON", "HERBIVORE");
+		zoo.addAnimal("Requin blanc", "POISSON", "CARNIVORE");
 		zoo.addAnimal("Truite dorée", "POISSON", "HERBIVORE");
-		zoo.addAnimal("Boa constrictor", "SERPENT", "CARNIVORE");
-		zoo.addAnimal("Python", "SERPENT", "CARNIVORE");
+		zoo.addAnimal("Boa constrictor", "REPTILE", "CARNIVORE");
+		zoo.addAnimal("Python", "REPTILE", "CARNIVORE");
+		zoo.addAnimal("Panda", "MAMMIFERE", "HERBIVORE");
 	}
 
 }

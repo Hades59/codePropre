@@ -19,10 +19,16 @@ public class Zoo {
 		else if (typeAnimal.equals("MAMMIFERE") && comportement.equals("HERBIVORE")){
 			savaneAfricaine.addAnimal(typeAnimal, nomAnimal, comportement);
 		}
-		else if (typeAnimal.equals("REPTILE")){
+		else if (typeAnimal.equals("REPTILE") && comportement.equals("CARNIVORE")){
 			fermeReptile.addAnimal(typeAnimal, nomAnimal, comportement);
 		}
-		else if (typeAnimal.equals("POISSON")){
+		else if (typeAnimal.equals("REPTILE") && comportement.equals("HERBIVORE")){
+			fermeReptile.addAnimal(typeAnimal, nomAnimal, comportement);
+		}
+		else if (typeAnimal.equals("POISSON") && comportement.equals("CARNIVORE")){
+			aquarium.addAnimal(typeAnimal, nomAnimal, comportement);
+		}
+		else if (typeAnimal.equals("POISSON") && comportement.equals("HERBIVORE")){
 			aquarium.addAnimal(typeAnimal, nomAnimal, comportement);
 		}
 	}
