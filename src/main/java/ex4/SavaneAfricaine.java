@@ -2,9 +2,9 @@ package ex4;
 
 import java.util.List;
 
-public class SavaneAfricaine extends Animal {
+public class SavaneAfricaine extends Zone {
 	
 	public int calculerKgsNourritureParJour(){
-		return getNoms().size() * 10;
+		return getAnimaux().size() * 10;
 	}
 }

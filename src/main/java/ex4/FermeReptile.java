@@ -2,9 +2,9 @@ package ex4;
 
 import java.util.List;
 
-public class FermeReptile extends Animal {
+public class FermeReptile extends Zone {
 
 	public double calculerKgsNourritureParJour(){
-		return getNoms().size() * 0.1;
+		return getAnimaux().size() * 0.1;
 	}
 }

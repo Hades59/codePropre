@@ -3,68 +3,60 @@
  */
 package ex4;
 
-import java.util.List;
-
 /**
  * @author ETY3
  *
  */
 public class Animal {
-	private List<String> types;
-	private List<String> noms;
-	private List<String> comportements;
-	
-	public void addAnimal(String typeAnimal, String nomAnimal, String comportement) {
-		types.add(typeAnimal);
-		noms.add(nomAnimal);
-		comportements.add(comportement);
-	}
-	
-	public void afficherListeAnimaux(){
-		for (String nom: noms){
-			System.out.println(nom);
-		}
-	}
-	
-	/** Getter for types
-	 * @return the types
-	 */
-	public List<String> getTypes() {
-		return types;
-	}
 
-	/** Setter for types
-	 * @param types the types to set
+	String typeAnimal;
+	String nomAnimal;
+	String comportement;
+	/**
+	 * @param typeAnimal
+	 * @param nomAnimal
+	 * @param comportement
 	 */
-	public void setTypes(List<String> types) {
-		this.types = types;
+	public Animal(String typeAnimal, String nomAnimal, String comportement) {
+		super();
+		this.typeAnimal = typeAnimal;
+		this.nomAnimal = nomAnimal;
+		this.comportement = comportement;
 	}
-
-	/** Getter for noms
-	 * @return the noms
+	/** Getter for typeAnimal
+	 * @return the typeAnimal
 	 */
-	public List<String> getNoms() {
-		return noms;
+	public String getTypeAnimal() {
+		return typeAnimal;
 	}
-
-	/** Setter for noms
-	 * @param noms the noms to set
+	/** Setter for typeAnimal
+	 * @param typeAnimal the typeAnimal to set
 	 */
-	public void setNoms(List<String> noms) {
-		this.noms = noms;
+	public void setTypeAnimal(String typeAnimal) {
+		this.typeAnimal = typeAnimal;
 	}
-
-	/** Getter for comportements
-	 * @return the comportements
+	/** Getter for nomAnimal
+	 * @return the nomAnimal
 	 */
-	public List<String> getComportements() {
-		return comportements;
+	public String getNomAnimal() {
+		return nomAnimal;
 	}
-
-	/** Setter for comportements
-	 * @param comportements the comportements to set
+	/** Setter for nomAnimal
+	 * @param nomAnimal the nomAnimal to set
 	 */
-	public void setComportements(List<String> comportements) {
-		this.comportements = comportements;
+	public void setNomAnimal(String nomAnimal) {
+		this.nomAnimal = nomAnimal;
+	}
+	/** Getter for comportement
+	 * @return the comportement
+	 */
+	public String getComportement() {
+		return comportement;
+	}
+	/** Setter for comportement
+	 * @param comportement the comportement to set
+	 */
+	public void setComportement(String comportement) {
+		this.comportement = comportement;
 	}
 }

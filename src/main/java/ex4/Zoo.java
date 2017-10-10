@@ -12,24 +12,24 @@ public class Zoo {
 		this.nom = nom;
 	}
 	
-	public void addAnimal(String nomAnimal, String typeAnimal, String comportement){
-		if (typeAnimal.equals("MAMMIFERE") && comportement.equals("CARNIVORE")){
-			zoneCarnivore.addAnimal(typeAnimal, nomAnimal, comportement);
+	public void addAnimal(Animal animal){
+		if (animal.getTypeAnimal().equals("MAMMIFERE") && animal.getComportement().equals("CARNIVORE")){
+			zoneCarnivore.addAnimal(animal);
 		}
-		else if (typeAnimal.equals("MAMMIFERE") && comportement.equals("HERBIVORE")){
-			savaneAfricaine.addAnimal(typeAnimal, nomAnimal, comportement);
+		else if (animal.getTypeAnimal().equals("MAMMIFERE") && animal.getComportement().equals("HERBIVORE")){
+			savaneAfricaine.addAnimal(animal);
 		}
-		else if (typeAnimal.equals("REPTILE") && comportement.equals("CARNIVORE")){
-			fermeReptile.addAnimal(typeAnimal, nomAnimal, comportement);
+		else if (animal.getTypeAnimal().equals("REPTILE") && animal.getComportement().equals("CARNIVORE")){
+			fermeReptile.addAnimal(animal);
 		}
-		else if (typeAnimal.equals("REPTILE") && comportement.equals("HERBIVORE")){
-			fermeReptile.addAnimal(typeAnimal, nomAnimal, comportement);
+		else if (animal.getTypeAnimal().equals("REPTILE") && animal.getComportement().equals("HERBIVORE")){
+			fermeReptile.addAnimal(animal);
 		}
-		else if (typeAnimal.equals("POISSON") && comportement.equals("CARNIVORE")){
-			aquarium.addAnimal(typeAnimal, nomAnimal, comportement);
+		else if (animal.getTypeAnimal().equals("POISSON") && animal.getComportement().equals("CARNIVORE")){
+			aquarium.addAnimal(animal);
 		}
-		else if (typeAnimal.equals("POISSON") && comportement.equals("HERBIVORE")){
-			aquarium.addAnimal(typeAnimal, nomAnimal, comportement);
+		else if (animal.getTypeAnimal().equals("POISSON") && animal.getComportement().equals("HERBIVORE")){
+			aquarium.addAnimal(animal);
 		}
 	}
 	
