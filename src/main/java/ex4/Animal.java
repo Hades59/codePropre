@@ -9,7 +9,7 @@ package ex4;
  */
 public class Animal {
 
-	String typeAnimal;
+	TypeAnimal typeAnimal;
 	String nomAnimal;
 	String comportement;
 	/**
@@ -17,7 +17,7 @@ public class Animal {
 	 * @param nomAnimal
 	 * @param comportement
 	 */
-	public Animal(String typeAnimal, String nomAnimal, String comportement) {
+	public Animal(TypeAnimal typeAnimal, String nomAnimal, String comportement) {
 		super();
 		this.typeAnimal = typeAnimal;
 		this.nomAnimal = nomAnimal;
@@ -26,13 +26,13 @@ public class Animal {
 	/** Getter for typeAnimal
 	 * @return the typeAnimal
 	 */
-	public String getTypeAnimal() {
+	public TypeAnimal getTypeAnimal() {
 		return typeAnimal;
 	}
 	/** Setter for typeAnimal
 	 * @param typeAnimal the typeAnimal to set
 	 */
-	public void setTypeAnimal(String typeAnimal) {
+	public void setTypeAnimal(TypeAnimal typeAnimal) {
 		this.typeAnimal = typeAnimal;
 	}
 	/** Getter for nomAnimal
